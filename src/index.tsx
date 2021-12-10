@@ -62,19 +62,19 @@ const App: React.FC = () => {
 
       {foundWeather && foundWeather < '15' && (
         <div>
-          <WeatherAPI foundWeather={foundWeather} content="Il fait froid !" className="cold"/>
+          <WeatherAPI foundWeather={foundWeather} content="Il fait froid !" className="cold coldImg"/>
         </div>
         )}
 
       {foundWeather && foundWeather >= '15' && (
         <div>
-          <WeatherAPI foundWeather={foundWeather} content="Il fait chaud !" className="warm"/>
+          <WeatherAPI foundWeather={foundWeather} content="Il fait chaud !" className="warm warmImg"/>
         </div>
         )}
 
       {foundWeather && foundWeather === 'error' && (
         <div>
-          <WeatherAPI foundWeather={foundWeather} content="Il semblerait que cette ville n'existe pas, veuillez réessayer" className="error"/>
+          <WeatherAPI foundWeather={foundWeather} content="Il semblerait que cette ville n'existe pas, veuillez réessayer" className="error errorImg"/>
         </div>
         )}
         <p style={{textDecoration:'none', color:'black'}}>{foundWeather}</p>

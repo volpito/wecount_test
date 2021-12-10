@@ -36,7 +36,7 @@ p{
   left: 0px;
   text-align: center;
   text-transform: uppercase;
-  padding-top: 15%;
+  padding-top: 5%;
   font-size: xx-large;
 }
 
@@ -45,13 +45,34 @@ p{
   font-family: Chalkduster, Arial, Tahoma, Serif;
 }
 
+.coldImg{
+  background-image: url("./assets/images/cold.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 25%;
+}
+
 .warm{
   background-color: orangered;
   font-family: Trattatello, Arial, Tahoma, Serif;
+}
+
+.warmImg{
+  background-image: url("./assets/images/fire.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 25%;
 }
 
 .error{
   background-color: black;
   color:blanchedalmond;
   font-family: papyrus, Arial, Tahoma, Serif;
+}
+
+.errorImg{
+  background-image: url("./assets/images/error.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 35%;
 }
