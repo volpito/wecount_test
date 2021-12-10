@@ -1,0 +1,57 @@
+body{
+  background-color:lavenderblush;
+}
+
+.title{
+  color: black;
+  text-align: center;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+}
+
+#cityInput{
+  height: 20px;
+  width: 500px;
+}
+
+.btnSearch{
+  height: 25px;
+  border-radius: 5px;
+  background-color:lightcoral;
+}
+
+p{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 15%;
+  font-size: xx-large;
+}
+
+.cold{
+  background-color: lightskyblue;
+  font-family: Chalkduster, Arial, Tahoma, Serif;
+}
+
+.warm{
+  background-color: orangered;
+  font-family: Trattatello, Arial, Tahoma, Serif;
+}
+
+.error{
+  background-color: black;
+  color:blanchedalmond;
+  font-family: papyrus, Arial, Tahoma, Serif;
+}
