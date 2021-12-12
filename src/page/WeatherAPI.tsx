@@ -6,6 +6,8 @@ function WeatherAPI() {
 
   var [foundWeather, setFoundWeather] = useState("");
 
+  const [degrees, setDegrees] = useState("")
+
   const [searchParams, setSearchParams] = useSearchParams();
 
   var q = searchParams.get('q') || "";
@@ -16,7 +18,10 @@ function WeatherAPI() {
 
     await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_key}&units=metric&lang=fr`)
     .then((response) => response.json())
-    .then((data) => {setFoundWeather((data.main.temp < '15') ? 'cold coldImg' : 'warm warmImg')})
+    .then((data) => {
+      setFoundWeather((data.main.temp < '15') ? 'cold coldImg' : 'warm warmImg')
+      setDegrees(data.main.temp)
+    })
     .catch((error) => {
       console.log({ error });
       setFoundWeather('error errorImg');
@@ -24,13 +29,16 @@ function WeatherAPI() {
   }
 
   useEffect(() => {
-    
     (async () => {
         await searchForCity(q, API_key);
       }
-  )()})
-
-
+      
+  )()
+    if(degrees){
+      console.log("Il fait " + degrees + "°C à " + q)
+  }})
+  
+  
   return (
     <div className={`result ${foundWeather}`}>
       {(foundWeather === 'cold coldImg') &&
