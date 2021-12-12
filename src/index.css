@@ -21,6 +21,8 @@ form{
   height: 25px;
   border-radius: 5px;
   background-color:lightcoral;
+  text-decoration: none;
+  color: black;
 }
 
 p{
