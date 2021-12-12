@@ -6,7 +6,7 @@ function WeatherAPI() {
 
   var [foundWeather, setFoundWeather] = useState("");
 
-  const [degrees, setDegrees] = useState("")
+  const [degrees, setDegrees] = useState("");
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -22,6 +22,7 @@ function WeatherAPI() {
       setFoundWeather((data.main.temp < '15') ? 'cold coldImg' : 'warm warmImg')
       setDegrees(data.main.temp)
     })
+
     .catch((error) => {
       console.log({ error });
       setFoundWeather('error errorImg');
@@ -32,40 +33,47 @@ function WeatherAPI() {
     (async () => {
         await searchForCity(q, API_key);
       }
-      
   )()
+  
     if(degrees){
-      console.log("Il fait " + degrees + "°C à " + q)
-  }})
+      console.log("Il fait " + degrees + "°C à " + q);
+    }
+
+  })
   
   
   return (
     <div className={`result ${foundWeather}`}>
+
       {(foundWeather === 'cold coldImg') &&
-      <p>
-        Il fait froid !
-      </p>
+        <p>
+          Il fait froid !
+        </p>
       }
 
       {(foundWeather === 'warm warmImg') &&
-      <p>
-        Il fait chaud !
-      </p>
+        <p>
+          Il fait chaud !
+        </p>
       }
 
       {foundWeather === 'error errorImg' && 
-      <>
-        <p>  
-          Il semble que cette ville n'existe pas...
-        </p>  
-        <p>  
-          Veuillez réessayer
-        </p>  
-      </>
+        <>
+          <p>  
+            Il semble que cette ville n'existe pas...
+          </p>  
+          <p>  
+            Veuillez réessayer
+          </p>  
+        </>
       }
+
       <button className="btnSearch" >
-          <Link to="/" style={{textDecoration:'none', color:'black'}}> Retourner à la page précédente </Link> 
+        <Link to="/" style={{textDecoration:'none', color:'black'}}> 
+          Retourner à la page précédente 
+        </Link> 
       </button>
+
     </div>
   )
 }
