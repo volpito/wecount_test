@@ -44,7 +44,7 @@ const App: React.FC = () => {
         Bienvenue
       </h1>
       <h2 className="title">
-        Merci de rentrer le nom d'une ville pour en obtenir la température actuelle
+        Merci de rentrer le nom d'une ville pour savoir s'il y fait plutôt chaud ou froid
       </h2>
       <form onSubmit={event => search(event)}>
 
@@ -55,7 +55,7 @@ const App: React.FC = () => {
         />
 
         <button className="btnSearch" >
-          click me 
+          Cliquez ici 
         </button>
 
       </form>
